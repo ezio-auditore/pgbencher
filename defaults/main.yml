@@ -10,7 +10,7 @@ pguser: postgres
 pgpass: FIXME
 
 fillfactor: 100
-scale_factor: 1
+scale_factor: 4000
 
 additional_options: --vacuum-all -n -r
 client: 10
@@ -29,29 +29,112 @@ bench_plan:
   # port (optional): database server port number, will default to pgport
   # additional_options (optional): others pgbench options, will default to none
 
-  - {name: 'bench 100 transaction on RW port',
+  - {name: 'bench 500 transaction on RW port',
      description: 'Bench read-write performance',
      bench: 'tpcb-like',
      port: '{{ pgport_rw }}',
      client: '{{ client }}',
      jobs: '{{ jobs }}',
-     transactions: '--transactions 100',
+     transactions: '--transactions 500',
      additional_options: '{{ additional_options }}'}
 
-  - {name: 'bench for 100 seconds',
-     description: 'Bench read-write performance during a given period',
+  - {name: 'bench 1000 transaction on RW port',
+     description: 'Bench read-write performance',
      bench: 'tpcb-like',
      port: '{{ pgport_rw }}',
      client: '{{ client }}',
      jobs: '{{ jobs }}',
-     transactions: '--time 100',
+     transactions: '--transactions 1000',
      additional_options: '{{ additional_options }}'}
 
-  - {name: 'bench 100 transactions on RO port',
-     description: 'Bench read-only performance',
-     bench: 'select-only',
-     port: '{{ pgport_ro }}',
+  - {name: 'bench 2000 transaction on RW port',
+     description: 'Bench read-write performance',
+     bench: 'tpcb-like',
+     port: '{{ pgport_rw }}',
      client: '{{ client }}',
      jobs: '{{ jobs }}',
-     transactions: '--transactions 100',
+     transactions: '--transactions 2000',
      additional_options: '{{ additional_options }}'}
+
+  - {name: 'bench 4000 transaction on RW port',
+     description: 'Bench read-write performance',
+     bench: 'tpcb-like',
+     port: '{{ pgport_rw }}',
+     client: '{{ client }}',
+     jobs: '{{ jobs }}',
+     transactions: '--transactions 4000',
+     additional_options: '{{ additional_options }}'}
+
+  - {name: 'bench 500 transaction on RW port',
+     description: 'Bench read-write performance',
+     bench: 'tpcb-like',
+     port: '{{ pgport_rw }}',
+     client: '{{ client }}',
+     jobs: '{{ jobs }}',
+     transactions: '--transactions 500',
+     additional_options: '{{ additional_options }}'}
+
+  - {name: 'bench 1000 transaction on RW port',
+     description: 'Bench read-write performance',
+     bench: 'tpcb-like',
+     port: '{{ pgport_rw }}',
+     client: '{{ client }}',
+     jobs: '{{ jobs }}',
+     transactions: '--transactions 1000',
+     additional_options: '{{ additional_options }}'}
+
+  - {name: 'bench 2000 transaction on RW port',
+     description: 'Bench read-write performance',
+     bench: 'tpcb-like',
+     port: '{{ pgport_rw }}',
+     client: '{{ client }}',
+     jobs: '{{ jobs }}',
+     transactions: '--transactions 2000',
+     additional_options: '{{ additional_options }}'}
+
+  - {name: 'bench 4000 transaction on RW port',
+     description: 'Bench read-write performance',
+     bench: 'tpcb-like',
+     port: '{{ pgport_rw }}',
+     client: '{{ client }}',
+     jobs: '{{ jobs }}',
+     transactions: '--transactions 4000',
+     additional_options: '{{ additional_options }}'}
+
+  - {name: 'bench 500 transaction on RW port',
+     description: 'Bench read-write performance',
+     bench: 'tpcb-like',
+     port: '{{ pgport_rw }}',
+     client: '{{ client }}',
+     jobs: '{{ jobs }}',
+     transactions: '--transactions 500',
+     additional_options: '{{ additional_options }}'}
+
+  - {name: 'bench 1000 transaction on RW port',
+     description: 'Bench read-write performance',
+     bench: 'tpcb-like',
+     port: '{{ pgport_rw }}',
+     client: '{{ client }}',
+     jobs: '{{ jobs }}',
+     transactions: '--transactions 1000',
+     additional_options: '{{ additional_options }}'}
+
+  - {name: 'bench 2000 transaction on RW port',
+     description: 'Bench read-write performance',
+     bench: 'tpcb-like',
+     port: '{{ pgport_rw }}',
+     client: '{{ client }}',
+     jobs: '{{ jobs }}',
+     transactions: '--transactions 2000',
+     additional_options: '{{ additional_options }}'}
+
+  - {name: 'bench 4000 transaction on RW port',
+     description: 'Bench read-write performance',
+     bench: 'tpcb-like',
+     port: '{{ pgport_rw }}',
+     client: '{{ client }}',
+     jobs: '{{ jobs }}',
+     transactions: '--transactions 4000',
+     additional_options: '{{ additional_options }}'}
+
+
